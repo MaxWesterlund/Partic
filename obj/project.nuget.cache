@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "e2yH3fh2uTI9CaGfF8yTDIzPQXYyrxAEs7ey0IiJMAycOXCPjSeB88naO6DSwUnM4A0Eca0CWJQpYkuRjy+OYA==",
+  "success": true,
+  "projectFilePath": "D:\\Github Repos\\Partic\\Partic\\Partic.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\maxwe\\.nuget\\packages\\raylib-cs\\5.0.0\\raylib-cs.5.0.0.nupkg.sha512",
+    "C:\\Users\\maxwe\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
