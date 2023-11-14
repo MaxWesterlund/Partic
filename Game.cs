@@ -7,8 +7,6 @@ static class Game {
     public static float Delta;
 
     public static void Loop() {
-        PM.InitParticles();
-
         Raylib.InitWindow(GS.WindowSize, GS.WindowSize, "Partic");
         Raylib.SetTargetFPS(144);
         while (!Raylib.WindowShouldClose()) {

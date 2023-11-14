@@ -1,24 +1,25 @@
+using Raylib_cs;
 using GS = GameSettings;
 
 public static class ParticleManager {
     public static readonly List<Particle> Particles = new();
     public static readonly bool[,] OccupationMap = new bool[GS.GameSize, GS.GameSize];
 
-    public static void InitParticles() {
-        Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            Particles.Add(new Particle(random.Next(GS.GameSize), random.Next(GS.GameSize)));
-        }
-    }
+    static float nextSpawnTime = 0;
+    static Random random = new();
 
     public static void UpdateParticles() {
+        float curTime = (float)Raylib.GetTime();
+        if (curTime > nextSpawnTime) {
+            nextSpawnTime = curTime + 0.3f;
+            Particles.Add(new Particle(random.Next(GS.GameSize), random.Next(GS.GameSize)));
+        }
         Shuffle(Particles);
         foreach (Particle particle in Particles) {
             particle.Move();
         }
     }
 
-    static Random random = new Random();  
     static void Shuffle<T>(IList<T> list) {  
         int n = list.Count;  
         while (n > 1) {  

@@ -1,5 +1,5 @@
-using System.Numerics;
 using Raylib_cs;
+using System.Numerics;
 using GS = GameSettings;
 using PM = ParticleManager;
 
@@ -18,9 +18,8 @@ public class Particle {
         ApplyGravity();
         PM.OccupationMap[(int)Position.X, (int)Position.Y] = false;
 
-        int distance = (int)Vector2.Distance(Position, Position + velocity);
-        for (int i = distance; i > -1; i--) {
-            Vector2 nextPos = Position + velocity - Vector2.Normalize(velocity) * i;
+        for (int i = (int)MathF.Round(velocity.Length()); i > -1; i--) {
+            Vector2 nextPos = Position + i * Vector2.Normalize(velocity);
             bool canMove = true;
             if ((int)nextPos.X < 0) {
                 nextPos.X = 0;
